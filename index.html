@@ -3,313 +3,1084 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akkala TejaSwaroop  - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+    <title>Alex Johnson - Portfolio</title>
+    <link rel="icon" href="path/to/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Open Sans', sans-serif;
+:root {
+    --primary: #000000;
+    --secondary: #8A2BE2;
+    --text: #ffffff;
+    --accent: #9b59b6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    color: var(--secondary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.hero-content h1 span {
+    color: var(--secondary);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--secondary);
+    color: var(--text);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 8rem 10%;
+    background-color: rgba(138, 43, 226, 0.05);
+}
+
+.about h2, .work h2, .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--secondary);
+}
+
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.skills {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    background: rgba(138, 43, 226, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid var(--secondary);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(138, 43, 226, 0.3);
+    transform: translateY(-5px);
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 8rem 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill {
+    margin-bottom: 2rem;
+}
+
+.skill h3 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(138, 43, 226, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--secondary);
+    width: 0;
+    border-radius: 5px;
+    transition: width 1.5s ease;
+}
+
+/* Certifications Section */
+.certifications {
+    padding: 8rem 10%;
+    background-color: rgba(138, 43, 226, 0.05);
+}
+
+.certs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.cert-date {
+    display: block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Work Section */
+.work {
+    padding: 8rem 10%;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+}
+
+.project-image {
+    height: 200px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+}
+
+.project-card h3 {
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: var(--secondary);
+}
+
+.project-card p {
+    padding: 0 1rem 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 8rem 10%;
+    background-color: rgba(138, 43, 226, 0.05);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Animations */
+.animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        margin-top: 3rem;
+    }
+
+    .circle {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 80%; /* Adjust size as needed */
+    height: auto;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure the image covers the<thinking>
+1. I have successfully read the contents of `main.js`. It includes JavaScript functionality for animations using GSAP, mobile menu toggling, and smooth scrolling for anchor links.
+2. Now that I have the contents of all three files (index.html, style.css, and main.js), I can create a comprehensive plan to combine them into a single HTML file.
+3. The combined file will include:
+   - The HTML structure from `index.html`
+   - The CSS styles from `style.css` embedded within a `<style>` tag
+   - The JavaScript functionality from `main.js` embedded within a `<script>` tag
+4. I will ensure that the necessary external scripts for GSAP are included in the combined file.
+</thinking>
+
+Here is the plan for combining the files:
+
+### Plan for Combining Files
+
+1. **Create a new HTML file** (e.g., `combined.html`).
+2. **Include the contents of `index.html`** as the base structure.
+3. **Embed the CSS styles** from `style.css` within a `<style>` tag in the `<head>` section.
+4. **Embed the JavaScript functionality** from `main.js` within a `<script>` tag at the end of the `<body>` section.
+5. **Include external GSAP scripts** in the `<head>` section to ensure animations work correctly.
+
+### Follow-up Steps
+- Create the `combined.html` file with the above structure.
+- Verify that the combined file works as expected by opening it in a browser.
+
+Now, I will proceed to create the `combined.html` file with the combined content.
+
+<create_file>
+<path>../OneDrive/Desktop/combined.html</path>
+<content>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Portfolio</title>
+    <link rel="icon" href="path/to/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #8A2BE2;
+            --text: #ffffff;
+            --accent: #9b59b6;
+        }
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
         .hero {
-            background-image: linear-gradient(to bottom, #007bff, #0069d9);
-            color: #fff;
-            padding: 100px;
-            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
         }
-        .profile-picture {
-            width: 150px;
-            height: 150px;
+
+        .hero-content {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--secondary);
+            color: var(--text);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .circle {
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
-            margin: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            position: relative;
+            animation: float 6s ease-in-out infinite;
         }
-        .project {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
         }
-        .certification {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
+
+        /* About Section */
+        .about {
+            padding: 8rem 10%;
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .about h2, .work h2, .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(138, 43, 226, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(138, 43, 226, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 8rem 10%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill {
+            margin-bottom: 2rem;
+        }
+
+        .skill h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(138, 43, 226, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: var(--secondary);
+            width: 0;
+            border-radius: 5px;
+            transition: width 1.5s ease;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 8rem 10%;
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .certs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-date {
+            display: block;
+            margin-top: 1rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Work Section */
+        .work {
+            padding: 8rem 10%;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+
+        .project-card h3 {
+            padding: 1rem;
+            font-size: 1.3rem;
+            color: var(--secondary);
+        }
+
+        .project-card p {
+            padding: 0 1rem 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 10%;
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        input, textarea {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--secondary);
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Animations */
+        .animate-text {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                margin-top: 3rem;
+            }
+
+            .circle {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 80%; /* Adjust size as needed */
+            height: auto;
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Ensure the image covers the area */
+            border: 5px solid var(--text); /* Optional border */
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-        </div>
-    </nav>
-    <section class="hero">
-        <img src="Picsart_25-02-23_14-06-56-600~2.jpg" class="profile-picture" alt="Profile Picture">
-        <h1>Akkala Teja Swaroop</h1>
-        <p>Welcome to my portfolio! I'm a Student with a passion for creating innovative solutions.</p>
-    </section>
-    <section id="skills" class="container py-5">
-        <h2 class="mb-4">Skills</h2>
-        <h5>Soft skills :</h5>
-        <p>Quick Learner , Critical Thinker , Time management , Communicaton Skills , Presentaton Skill ,Team Management , Effective Guidence Provider</p> <br>
-        <h5> Technical skills :</h5>
-        <p> Html , Python , C++ , R Programming , Ai tools</p>
-    </section>
-    <section id="about" class="container py-5">
-        <h2 class="mb-4">About me</h2>
-        <p>My name is Akkala Teja Swaroop, and I am currently pursuing a Bachelor's degree in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning at NRI Institute of Technology. My academic journey is fueled by a deep passion for leveraging AI and ML to create innovative solutions and drive technological advancements. With a strong foundation in programming, data analysis, and problem-solving, I am committed to honing my skills and contributing to cutting-edge projects that push the boundaries of innovation. I am enthusiastic about collaborating with like-minded individuals to explore transformative ideas and make a meaningful impact in the tech industry.</p>
-    </section>
-     <section id="projects" class="container py-5">
-        <h2 class="mb-4">My projects</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Not Done Yet</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">View details</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="animate-text">Hi, I'm <span>Alex Johnson</span></h1>
+                <p class="animate-text">Frontend Developer & UI Specialist</p>
+                <a href="#work" class="btn animate-text">Explore My Projects</a>
+            </div>
+            <div class="hero-image">
+                <div class="circle">
+                    <img src="images/profile.jpg" alt="Alex Johnson" class="profile-pic">
                 </div>
             </div>
-          <div class="col-md-4">
-                <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Not Done Yet</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">View details</button>
+        </section>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Full-stack developer specializing in React and Node.js with a strong focus on creating accessible, performant web applications. Certified AWS Developer with experience building scalable cloud solutions.</p>
+                    <p>Previously led frontend development at TechSolutions Inc., where I implemented design systems that improved development velocity by 40%.</p>
+                </div>
+                <div class="skills">
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">TypeScript</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">GraphQL</div>
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">Jest</div>
+                    <div class="skill-item">Figma</div>
                 </div>
             </div>
-         <!--   <div class="col-md-4">
-                <div class="project">
-                    <h3>Project 3</h3>
-                    <p>Not Done Yet</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">View details</button>
+        </section>
+        <section id="work" class="work">
+            <h2>My Work</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>E-commerce Dashboard</h3>
+                    <p>Built with React, Redux, and Stripe API. Improved checkout conversion by 25% through performance optimizations.</p>
                 </div>
-            </div> -->
-        </div>
-    </section> 
-    <section id="certifications" class="container py-5">
-        <h2 class="mb-4">My certifications</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="certification">
-                    <h3>Html</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification1Modal">View details</button>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Healthcare Portal</h3>
+                    <p>HIPAA-compliant patient management system using React, Node.js, and MongoDB. Serves 10,000+ monthly users.</p>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="certification">
-                    <h3>Python</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification2Modal">View details</button>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>AI Content Analyzer</h3>
+                    <p>NLP-powered writing assistant using TensorFlow.js. Won 2023 Web Innovation Award.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="certification">
-                    <h3>C++</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification3Modal">View details</button>
-                </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://github.com/alexjohnson-dev" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/alexjohnson-dev" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/alexjohnson_dev" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
-          <!--  <div class="col-md-4">
-                <div class="certification">
-                    <h3>Certification 4</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification4Modal">View details</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="certification">
-                    <h3>Certification 5</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification5Modal">View details</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="certification">
-                    <h3>Certification 6</h3>
-                    <p>click below to get full details</p>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#certification6Modal">View details</button>
-                </div>
-            </div> -->
-        </div>
-    </section>
-    <section id="contact" class="container py-5">
-        <h2 class="mb-4">Get in touch</h2>
-        <p><a href="mailto:tejaswaroopakkala@gmail.com">Email</a></p>
-        <p><a href="https://linkedin.com/in/akkalatejaswaroop" target="_blank">LinkedIn</a> </p>
-    </section>
-    <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Project 1</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Project 2</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="project3Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Project 3</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="certification1Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">HTML</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul><li>
-                        <p>I was completed my introduction to html course from Infosys springboard and I have a certification after passing the Online CBT on Introduction to HTML <a href="https://drive.google.com/uc?export=download&id=1YwvZlJuV411fynTYcKT36bUNvoStONjx">Click here</a> to view my certificate of completion</p>
-                    </li></ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="certification2Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Python</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul><li>
-                    <p>I was completed my Basics of python course from Infosys springboard and I have a certification after passing the Online CBT on Basics of Python <a href="https://drive.google.com/uc?export=download&id=1JyZXKaN1_MPK8blYP3OKheiBbCKa_Iws">Click here</a> to view my certificate of completion</p>
-                     </li></ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="certification3Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">C++</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul><li>
-                        <p>I was completed my C++ bootcamp from Lets upgrade and I have a certification after passing the Online CBT on C++ Bootcamp of 3 days <a href="https://drive.google.com/uc?export=download&id=18vFas9eCjmBQEk2MWsawp3rCDjrUMl2J">Click here</a> to view my certificate of completion</p>
-                         </li></ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-   <!-- <div class="modal fade" id="certification4Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Certification 4</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="certification5Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Certification 5</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="certification6Modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Certification 6</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Uploaded soon</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <footer class="footer footer-center p-10 bg-base-300 text-base-content">
-        <div>
-            <center>
-            <p>Designed & Developed by <a href="https://github.com/akkalatejaswaroop" target="_blank" class="link link-primary"> Akkala Teja Swaroop</a></p>
-            <p>© 2025 Akkala Teja Swaroop. All rights reserved.</p>
-        </center>
-        </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Alex Johnson. All rights reserved.</p>
     </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            burger.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+                burger.classList.toggle('toggle');
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Wait for GSAP to load
+            const checkGSAP = setInterval(() => {
+                if (window.gsap) {
+                    clearInterval(checkGSAP);
+                    initAnimations();
+                }
+            }, 100);
+        });
+
+        function initAnimations() {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Hero section animations
+            gsap.to('.hero-content h1', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            gsap.to('.hero-content p', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            gsap.to('.btn', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: 0.6,
+                ease: 'power3.out'
+            });
+
+            // About section animations
+            gsap.from('.about-text', {
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.skills', {
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                x: 100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            // Skills section animations
+            gsap.utils.toArray('.skill-level').forEach(bar => {
+                gsap.to(bar, {
+                    width: bar.dataset.level,
+                    scrollTrigger: {
+                        trigger: '.skills-section',
+                        start: 'top 80%',
+                        toggleActions: 'play none none none'
+                    },
+                    duration: 1.5,
+                    ease: 'power3.out'
+                });
+            });
+
+            // Certifications section animations
+            gsap.from('.cert-card', {
+                scrollTrigger: {
+                    trigger: '.certifications',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out'
+            });
+
+            // Work section animations
+            gsap.from('.project-card', {
+                scrollTrigger: {
+                    trigger: '.work',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 100,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out'
+            });
+
+            // Contact section animations
+            gsap.from('form', {
+                scrollTrigger: {
+                    trigger: '.contact',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            // Floating circle animation
+            gsap.to('.circle', {
+                rotation: 360,
+                duration: 30,
+                repeat: -1,
+                ease: 'none'
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    document.querySelector('header').style.background = 'rgba(0, 0, 0, 0.9)';
+                    document.querySelector('header').style.padding = '1rem 5%';
+                } else {
+                    document.querySelector('header').style.background = 'rgba(0, 0, 0, 0.8)';
+                    document.querySelector('header').style.padding = '1.5rem 5%';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
