@@ -1,0 +1,507 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link rel="icon" href="portifolio\Icons\fp.jpg" type="image/x-icon">
+  <title>
+   Akkala Teja Swaroop - Portifolio
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e0e7ff;
+      perspective: 1200px;
+      overflow-x: hidden;
+    }
+    .card-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+    }
+    .card-3d:hover {
+      transform: rotateY(15deg) rotateX(10deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+    .btn-3d {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+    .btn-3d:hover {
+      transform: translateZ(20px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.7);
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px 2px #3b82f6;
+      border-color: #3b82f6;
+    }
+    /* Scrollbar for contact form */
+    textarea::-webkit-scrollbar {
+      width: 8px;
+    }
+    textarea::-webkit-scrollbar-thumb {
+      background-color: #3b82f6;
+      border-radius: 4px;
+    }
+  </style>
+ </head>
+ <body class="min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-gray-900 fixed w-full z-30 top-0 shadow-lg">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a aria-label="Homepage link" class="text-2xl font-semibold text-indigo-400 tracking-wide select-none" href="#home">
+    Portfolio
+    </a>
+    <ul class="hidden md:flex space-x-8 text-gray-300 font-medium">
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#about">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#skills">
+       Skills
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#education">
+       Education
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#experience">
+       Experience
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#certifications">
+       Certifications
+      </a>
+     </li>
+     <li>
+      <a class="hover:text-indigo-400 transition" href="#contact">
+       Contact
+      </a>
+     </li>
+    </ul>
+    <button aria-label="Toggle menu" class="md:hidden text-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400" id="menu-btn">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <div class="hidden md:hidden bg-gray-800" id="mobile-menu">
+    <ul class="flex flex-col space-y-2 px-6 py-4 text-gray-300 font-medium">
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#about">
+       About
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#skills">
+       Skills
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#education">
+       Education
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#experience">
+       Experience
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#certifications">
+       Certifications
+      </a>
+     </li>
+     <li>
+      <a class="block hover:text-indigo-400 transition" href="#contact">
+       Contact
+      </a>
+     </li>
+    </ul>
+   </div>
+  </nav>
+  <main class="flex-grow pt-24 max-w-7xl mx-auto px-6">
+   <!-- Home / Profile Section -->
+   <section aria-label="Profile section" class="flex flex-col md:flex-row items-center justify-center gap-12 py-16" id="home">
+    <div class="card-3d bg-gradient-to-tr from-indigo-700 to-indigo-900 rounded-3xl p-1 shadow-lg max-w-xs md:max-w-sm">
+     <div class="bg-gray-900 rounded-3xl overflow-hidden transform transition-transform duration-500 hover:scale-105">
+      <img alt="Profile picture of a young coder with glasses and headphones in a modern workspace, smiling confidently" class="w-full h-full object-cover" height="400" loading="lazy" src="portifolio\Icons\mypic.jpg width="400"/>
+     </div>
+    </div>
+    <div class="max-w-xl text-center md:text-left space-y-6">
+     <h1 class="text-5xl font-extrabold text-indigo-400 tracking-wide select-text">
+      Akkala Teja Swaroop
+     </h1>
+     <p class="text-lg text-gray-300 leading-relaxed">
+     Welcome to my portfolio! I'm a Student with Dedication towards continuous learning and mastering emerging technologies..
+     </p>
+     <a aria-label="Download Resume" class="btn-3d inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition transform hover:scale-105" download="John_Doe_Resume.pdf" href="https://drive.google.com/uc?export=download&id=1yLQdzm8qOxmi8vyvPR317TrV3p7MiB_v">
+      <i class="fas fa-file-download mr-2">
+      </i>
+      Download Resume
+     </a>
+    </div>
+   </section>
+   <!-- About Section -->
+   <section aria-labelledby="about-title" class="py-16 border-t border-indigo-700" id="about">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-8 text-center" id="about-title">
+     About Me
+    </h2>
+    <div class="max-w-4xl mx-auto text-gray-300 text-lg leading-relaxed space-y-6">
+     <p>
+      A highly motivated second-year Computer Science and Engineering student specializing in Artificial Intelligence and Machine Learning, committed to continuous learning and professional growth. Passionate about leveraging AI and ML technologies to drive innovation, I actively pursue certification courses to expand my expertise and strengthen my technical foundation. 
+     </p>
+     <p>
+      With a clear vision of becoming an AI/ML engineer, I am dedicated to overcoming challenges and seizing opportunities that align with my aspirations. My unwavering commitment to excellence fuels my drive to contribute meaningfully to the field.
+     </p>
+    </div>
+   </section>
+   <!-- Skills Section -->
+   <section aria-labelledby="skills-title" class="py-16 border-t border-indigo-700" id="skills">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center" id="skills-title">
+     Skills
+    </h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8" role="list">
+
+    <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="projects\portifolio\Icons\html.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        HTML
+    </span>
+</div>
+
+    <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\css.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        CSS
+    </span>
+</div>
+
+    <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\javascript.jpg"width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        JAVASCRIPT
+    </span>
+</div>
+
+    <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\github.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        GITHUB
+    </span>
+</div>
+
+     <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\git.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        GIT
+    </span>
+</div>
+
+    <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\gcp.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        GOOGLE CLOUD PLATFORM
+    </span>
+</div>
+
+     <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\oracle cloud.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        ORACLE CLOUD
+    </span>
+</div>
+
+     <div aria-label="DeepSeek AI tool skill" class="card-3d bg-gray-900 rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-emerald-400 transition" role="listitem" tabindex="0">
+    <img alt="DeepSeek AI logo" class="mb-4 w-16 h-16" height="96" loading="lazy" src="portifolio\Icons\ms office.jpg" width="96"/>
+    <span class="text-lg font-semibold text-gray-200">
+        MICROSOFT OFFICE (Word, PowerPoint, Excel)
+    </span>
+</div>
+
+   </section>
+   <!-- Education Section -->
+   <section aria-labelledby="education-title" class="py-16 border-t border-indigo-700" id="education">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center" id="education-title">
+     Education
+    </h2>
+    <div class="max-w-4xl mx-auto space-y-10">
+     <article aria-label="Bachelor of Science in Computer Science from University of Technology, 2014 to 2018" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+       Bachelor of Technology in Computer Science
+      </h3>
+      <p class="text-gray-400 italic mb-1">
+      Nri Institute Of Technology
+      </p>
+      <p class="text-gray-400 mb-3">
+       2024 - 2028
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+      Currently pursuing Bachelors of Technology In CSE - AIML
+      </p>
+     </article>
+    <!-- <article aria-label="Full Stack Web Development Bootcamp at Code Academy, 2019" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+       Full Stack Web Development Bootcamp
+      </h3>
+      <p class="text-gray-400 italic mb-1">
+       Code Academy
+      </p>
+      <p class="text-gray-400 mb-3">
+       2019
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+       Intensive 6-month program covering modern web technologies including React, Node.js, Express, and MongoDB. Built multiple projects and collaborated in teams.
+      </p>
+     </article>-->
+    </div>
+   </section>
+   <!-- Experience Section -->
+   <section aria-labelledby="experience-title" class="py-16 border-t border-indigo-700" id="experience">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center" id="experience-title">
+    Experience
+    </h2>
+    <div class="max-w-5xl mx-auto space-y-12">
+
+ <article aria-label="Web Development Job Simulation Experience" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+    <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+        Web Development Job Simulation
+    </h3>
+    <p class="text-gray-400 italic mb-1">
+        Successfully completed an immersive web development job simulation focused on entrepreneurship and innovation, gaining hands-on experience in website planning, form creation, and UX optimization at City of Moreton Bay & Forage
+    </p>
+    <p class="text-gray-400 mb-3">
+        June 2025
+    </p>
+    <ul class="list-disc list-inside text-gray-300 space-y-2">
+      <li>Applied Front End Technologies Like HTML, CSS.</li>
+        <li>Applied UI/UX best practices to improve website accessibility and user engagement.</li>
+        <li>Developed functional and visually appealing web elements, enhancing project presentation.</li>
+        <li>Gained expertise in web analytics and optimization strategies for user experience.</li>
+    </ul>
+</article>
+
+<article aria-label="Senior Frontend Developer at Tech Solutions from 2021 to Present" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+     Community Coordinator
+      </h3>
+      <p class="text-gray-400 italic mb-1">
+       Community Coordinator at <a href="https://opportunitix.blogspot.com">opportunitiX</a>  
+      </p>
+      <p class="text-gray-400 mb-3">
+       May 2025 - Present
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Led website development, ensuring seamless functionality and optimal user experience.</li>
+    <li>Implemented SEO and branding strategies to enhance online visibility and engagement.</li>
+    <li>Integrated analytics, automation, and subscription tools for data-driven improvements.</li>
+    <li>Managed content and social media integration to foster community engagement.</li>
+      </ul>
+     </article>
+
+     <article aria-label="Senior Frontend Developer at Tech Solutions from 2021 to Present" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+     Student Ambassador/Campus Ambassador/Student partner
+      </h3>
+      <p class="text-gray-400 italic mb-1">
+       Student Ambassador/Campus Ambassador/Student partner at Nri Institute Of Technology For Top IIT's like IIT Guwahati, IIT Roorkee and EduTech Platforms like Lets Upgrade, Internshala, GlobalTech, Microsoft Learn etc
+      </p>
+      <p class="text-gray-400 mb-3">
+       April 2025 - JUne 2025
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+       <li> Mentored many groups and Guided to Complete Many Courses</li>
+       <li>Worked as a Leader and Gained Many Leadership skills with Valuable Exxperience</li>
+       <li> Mentored Friends and Helped to Upskill themselves in Technical Way</li>
+       <li>Collaborated with Likely Minded People and Shared Many Experiences</li>
+      </ul>
+     </article>
+
+<article aria-label="AI Tools Expert" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+  <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+    AI Tools Expert
+  </h3>
+  <p class="text-gray-400 italic mb-1">
+    Specialist in AI-driven productivity solutions, optimizing workflows for efficiency and innovation.
+  </p>
+  <p class="text-gray-400 mb-3">
+   December 2025 - Present
+  </p>
+  <ul class="list-disc list-inside text-gray-300 space-y-2">
+    <li>Implemented AI-powered tools to enhance automation and streamline complex processes.</li>
+    <li>Led workshops and mentoring programs, guiding individuals to master AI-based efficiency solutions.</li>
+    <li>Developed strategies integrating AI into various domains, improving performance and accuracy.</li>
+    <li>Built strong collaborations with experts and like-minded innovators to exchange ideas and refine methodologies.</li>
+  </ul>
+</article>
+
+
+    <!-- <article aria-label="Full Stack Developer at Web Innovators from 2018 to 2021" class="card-3d bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-indigo-600 transition" tabindex="0">
+      <h3 class="text-2xl font-semibold text-indigo-300 mb-2">
+       Full Stack Developer
+      </h3>
+      <p class="text-gray-400 italic mb-1">
+       Web Innovators
+      </p>
+      <p class="text-gray-400 mb-3">
+       2018 - 2021
+      </p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+       <li>
+        Developed and maintained web applications using React, Node.js, and MongoDB.
+       </li>
+       <li>
+        Created reusable UI components and implemented responsive design.
+       </li>
+       <li>
+        Optimized application performance and improved SEO.
+       </li>
+       <li>
+        Worked closely with product managers and designers to deliver user-centric solutions.
+       </li>
+      </ul>
+     </article>-->
+    </div>
+   </section>
+   <!-- Certifications Section -->
+   <section aria-labelledby="certifications-title" class="py-16 border-t border-indigo-700" id="certifications">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center" id="certifications-title">
+     Certifications
+    </h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10">
+     <div aria-label="Certified JavaScript Developer by W3Schools" class="card-3d bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-indigo-600 transition flex items-center space-x-4" tabindex="0">
+      <img alt="Certification badge for Certified JavaScript Developer by W3Schools, golden badge with JS letters" class="w-20 h-20 rounded-lg object-contain" height="80" loading="lazy" src="portifolio\Icons\mscertified.jpg" width="80"/>
+      <div>
+       <h3 class="text-xl font-semibold text-indigo-300">
+       Microsoft Certified AI and Cloud Professional
+       </h3>
+       <p class="text-gray-400">
+        Microsoft Learn - 2025
+       </p>
+      </div>
+     </div>
+    <!-- <div aria-label="React Professional Certification by Meta" class="card-3d bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-indigo-600 transition flex items-center space-x-4" tabindex="0">
+      <img alt="Certification badge for React Professional Certification by Meta, blue and white badge with React atom logo" class="w-20 h-20 rounded-lg object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6fa41aab-5203-4e64-3817-1ea5fc1eacf0.jpg" width="80"/>
+      <div>
+       <h3 class="text-xl font-semibold text-indigo-300">
+        React Professional Certification
+       </h3>
+       <p class="text-gray-400">
+        Meta - 2021
+       </p>
+      </div>
+     </div>
+     <div aria-label="AWS Certified Solutions Architect" class="card-3d bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-indigo-600 transition flex items-center space-x-4" tabindex="0">
+      <img alt="Certification badge for AWS Certified Solutions Architect, orange and white badge with AWS logo" class="w-20 h-20 rounded-lg object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/dcdf5e0b-cb8c-4b50-3e9a-1b19327d6366.jpg" width="80"/>
+      <div>
+       <h3 class="text-xl font-semibold text-indigo-300">
+        AWS Certified Solutions Architect
+       </h3>
+       <p class="text-gray-400">
+        Amazon Web Services - 2022
+       </p>
+      </div>
+     </div>
+     <div aria-label="Docker Certified Associate" class="card-3d bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-indigo-600 transition flex items-center space-x-4" tabindex="0">
+      <img alt="Certification badge for Docker Certified Associate, blue badge with whale logo" class="w-20 h-20 rounded-lg object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4390258e-90ea-4031-4b75-3e24c5e18055.jpg" width="80"/>
+      <div>
+       <h3 class="text-xl font-semibold text-indigo-300">
+        Docker Certified Associate
+       </h3>
+       <p class="text-gray-400">
+        Docker - 2023
+       </p>
+      </div> -->
+     </div>
+    </div>
+   </section>
+   
+   
+
+   <!-- Contact Section -->
+   <section aria-labelledby="contact-title" class="py-16 border-t border-indigo-700" id="contact">
+    <h2 class="text-4xl font-bold text-indigo-400 mb-12 text-center" id="experience-title">
+     Contact
+    </h2> 
+    <center>
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: #2563eb; /* professional blue */
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(37 99 235 / 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+
+  .btn-link:hover,
+  .btn-link:focus-visible {
+    background-color: #1d4ed8;
+    box-shadow: 0 6px 14px rgb(29 78 216 / 0.5);
+    outline: none;
+  }
+
+  .material-icons {
+    font-size: 20px;
+    line-height: 1;
+  }
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <a href="https://forms.gle/nxL6qKFmbsnPBsFd9" class="btn-link" aria-label="Send message">
+    <span class="material-icons" aria-hidden="true"></span>
+    Send Message
+  </a> </center>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-indigo-700 py-8 mt-16">
+   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm select-none">
+    <p>
+     © 2025 AKKALA TEJA SWAROOP. All rights reserved.
+    </p>
+    <div class="flex space-x-6 mt-4 md:mt-0">
+     <a aria-label="GitHub profile" class="hover:text-indigo-400 transition" href="https://github.com/akkalatejaswaroop" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-github fa-lg">
+      </i>
+     </a>
+     <a aria-label="LinkedIn profile" class="hover:text-indigo-400 transition" href="https://linkedin.com/in/akkalatejaswaroop" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-linkedin fa-lg">
+      </i>
+     </a>
+     <a aria-label="Twitter profile" class="hover:text-indigo-400 transition" href="https://twitter.com/tejaswaroop_a" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-twitter fa-lg">
+      </i>
+       <a aria-label="Blog Website" class="hover:text-indigo-400 transition" href="http://manaandhravlogss.blogspot.com/" rel="noopener noreferrer" target="_blank">
+      <i class='fab fa-blogger-b'></i>
+     </a>
+    </div>
+   </div>
+  </footer>
+  <script>
+   const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+ </body>
+</html>
